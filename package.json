@@ -8,6 +8,7 @@
     "typescript": "^4.9.5"
   },
   "scripts": {
+    "ci": "gts lint && tsc",
     "lint": "gts lint",
     "clean": "gts clean",
     "compile": "tsc",
