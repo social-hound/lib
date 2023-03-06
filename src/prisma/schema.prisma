@@ -8,9 +8,9 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model youtube_channels {
+model YouTubeChannel {
   created_at                 DateTime? @default(now()) @db.Timestamptz(6)
-  updated_at                 DateTime? @default(now()) @db.Timestamptz(6)
+  updated_at                 DateTime? @default(now()) @updatedAt @db.Timestamptz(6)
   yt_id                      String    @id @unique
   yt_title                   String?
   yt_description             String?
@@ -21,4 +21,6 @@ model youtube_channels {
   yt_thumbnail_large         String?
   yt_hidden_subscriber_count Boolean   @default(false)
   is_deleted                 Boolean   @default(false)
+
+  @@map("youtube_channels")
 }
